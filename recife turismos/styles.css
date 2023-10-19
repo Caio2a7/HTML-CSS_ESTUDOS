@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+  }
+header {
+    width: 1920px;
+    height: 221px;
+    flex-shrink: 0;
+    background: #0043AB;
+}
+.header-content{
+    display: flex;
+    align-items: center;
+} 
+.header-content img{
+    margin-left: 84.6px;
+    margin-top: 10.3px;
+    margin-right: 52.89px;
+    width: 129px;
+    height: 126.362px;
+    flex-shrink: 0;
+}
+.header-content h1{
+    width: 783.158px;
+    height: 107.586px;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 300; 
+    line-height: 96.82px;
+}
+.navegation ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navegation li {
+    display: inline-block; /* Ou use display: inline; */
+    margin: 0 10px; /* Adicione margens entre os itens de navegação */
+}
