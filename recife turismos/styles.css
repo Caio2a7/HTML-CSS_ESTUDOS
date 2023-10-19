@@ -38,6 +38,38 @@ header {
 }
 
 .navegation li {
-    display: inline-block; /* Ou use display: inline; */
-    margin: 0 10px; /* Adicione margens entre os itens de navegação */
+    display: inline-block; 
+}
+.navegation li a{
+    width: 317px;
+    height: 65px;
+    flex-shrink: 0;
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    color: #FFF;
+}
+nav a {
+    text-decoration: none;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: #ddd;
 }
