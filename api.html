@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        input, button {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Cadastro de Produto</h2>
+
+    <form id="cadastroForm">
+        <label for="produto">Nome do Produto:</label>
+        <input type="text" id="produto" required>
+
+        <label for="valor">Valor do Produto:</label>
+        <input type="number" id="valor" required>
+
+        <label for="descricao">Descrição do Produto:</label>
+        <textarea id="descricao" required></textarea>
+
+        <button type="button" onclick="cadastrarProduto()">Cadastrar</button>
+    </form>
+
+    <div id="feedback"></div>
+
+    <h2>Produtos Cadastrados</h2>
+    <ul id="produtosCadastrados"></ul>
+
+    <script>
+        function cadastrarProduto() {
+            const produto = document.getElementById('produto').value;
+            const valor = document.getElementById('valor').value;
+            const descricao = document.getElementById('descricao').value;
+
+            const data = {
+                produto: produto,
+                valor: valor,
+                descricao: descricao
+            };
+
+            fetch('https://httpbin.org/post', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Limpar os inputs em caso de sucesso
+                document.getElementById('produto').value = '';
+                document.getElementById('valor').value = '';
+                document.getElementById('descricao').value = '';
+
+                // Exibir feedback de sucesso
+                document.getElementById('feedback').innerText = 'Produto cadastrado com sucesso!';
+
+                // Adicionar produto na seção 'Produtos Cadastrados' (desafio extra)
+                const produtosCadastrados = document.getElementById('produtosCadastrados');
+                const novoProduto = document.createElement('li');
+                novoProduto.innerText = `Nome: ${data.json.produto}, Valor: ${data.json.valor}, Descrição: ${data.json.descricao}`;
+                produtosCadastrados.appendChild(novoProduto);
+            })
+            .catch(error => {
+                // Exibir feedback de erro
+                document.getElementById('feedback').innerText = 'Erro ao cadastrar o produto. Tente novamente.';
+            });
+        }
+    </script>
+
+</body>
+</html>
