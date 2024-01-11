@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "nome": "Smartphone XYZ",
+    "marca": "TechCo",
+    "categoria": "Eletrônicos",
+    "preco": 799.99,
+    "quantidadeEstoque": 50,
+    "disponivelProntaEntrega": true
+  },
+  {
+    "id": 2,
+    "nome": "Notebook ABC",
+    "marca": "InovaTech",
+    "categoria": "Computadores",
+    "preco": 1299.99,
+    "quantidadeEstoque": 20,
+    "disponivelProntaEntrega": false
+  },
+  {
+    "id": 3,
+    "nome": "Fone de Ouvido Bluetooth",
+    "marca": "SoundWave",
+    "categoria": "Áudio",
+    "preco": 49.99,
+    "quantidadeEstoque": 100,
+    "disponivelProntaEntrega": true
+  }
+]
